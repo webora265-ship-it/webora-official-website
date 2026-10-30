@@ -1,0 +1,263 @@
+/* ==========================================================================
+   WEBORA 3D STUDIO BUILDER STYLES
+   ========================================================================== */
+
+.studio-page-wrapper {
+  padding: 100px 24px 120px;
+  max-width: 1360px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.studio-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.studio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(138, 43, 226, 0.15));
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #00f0ff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.studio-header h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.studio-header p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Studio Main Workspace Grid */
+.studio-workspace-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  height: 640px;
+}
+
+/* 3D Viewport Side */
+.studio-viewport-panel {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 40%, #170d36 0%, #080612 80%);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 240, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.studio-viewport-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.studio-canvas-hud {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+}
+
+.studio-hud-tag {
+  background: rgba(13, 10, 26, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-family: monospace;
+  color: #00f0ff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.studio-drag-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+  pointer-events: none;
+}
+
+/* Controls Inspector Panel */
+.studio-inspector-panel {
+  background: rgba(15, 11, 30, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.inspector-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.control-group {
+  margin-bottom: 22px;
+}
+
+.options-pill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.option-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.option-btn:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: #00f0ff;
+  color: #00f0ff;
+}
+
+.option-btn.active {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(138, 43, 226, 0.3));
+  border-color: #00f0ff;
+  color: #00f0ff;
+}
+
+/* Color Palette Circles */
+.colors-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.color-dot-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.color-dot-btn:hover {
+  transform: scale(1.15);
+}
+
+.color-dot-btn.active {
+  border-color: #ffffff;
+  box-shadow: 0 0 15px currentColor;
+  transform: scale(1.15);
+}
+
+/* Sliders */
+.slider-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.studio-slider {
+  width: 100%;
+  accent-color: #00f0ff;
+}
+
+/* Code Snippet Box */
+.studio-code-box {
+  background: #080612;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #38bdf8;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+.deploy-world-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #00f0ff, #8a2be2, #ff007f);
+  border: none;
+  border-radius: 16px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.deploy-world-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(138, 43, 226, 0.6);
+}
+
+@media (max-width: 990px) {
+  .studio-workspace-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .studio-viewport-panel {
+    height: 450px;
+  }
+}

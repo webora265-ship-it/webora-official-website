@@ -1,28 +1,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Palette, Smartphone, MonitorPlay } from 'lucide-react';
+import { Boxes, Sparkles, Cpu, Layers, ArrowUpRight, Zap } from 'lucide-react';
 import './Services.css';
 
 const servicesData = [
   {
-    title: 'Web Design & UI/UX',
-    description: 'We craft stunning, user-centric interfaces that captivate and convert visitors.',
-    icon: <Palette size={40} className="service-icon" />
+    title: 'Spatial 3D Experiences',
+    description: 'Immersive, interactive web experiences rendered in real-time WebGL & WebGPU with reactive spatial physics.',
+    icon: <Boxes size={32} color="#00f0ff" />,
+    tag: 'THREE.JS / SHADERS',
+    glowColor: '#00f0ff'
   },
   {
-    title: 'Custom Web Development',
-    description: 'High-performance, scalable web applications built with the latest modern frameworks.',
-    icon: <Code size={40} className="service-icon" />
+    title: 'Holographic UI & Systems',
+    description: 'Ultra-modern, glassmorphic design systems engineered for high-conversion spatial web applications.',
+    icon: <Layers size={32} color="#c084fc" />,
+    tag: 'FUTURISTIC UX',
+    glowColor: '#8a2be2'
   },
   {
-    title: 'Mobile App Design',
-    description: 'Seamless mobile experiences that look and feel premium across all devices.',
-    icon: <Smartphone size={40} className="service-icon" />
+    title: 'Generative AI Pipelines',
+    description: 'Neural prompt-to-3D compilers and autonomous layouts that dynamically reconstruct themselves.',
+    icon: <Cpu size={32} color="#ff007f" />,
+    tag: 'NEURAL RUNTIME',
+    glowColor: '#ff007f'
   },
   {
-    title: '3D & Motion Graphics',
-    description: 'Interactive 3D elements and smooth animations that bring your brand to life.',
-    icon: <MonitorPlay size={40} className="service-icon" />
+    title: 'Global Edge Multiverse',
+    description: 'Sub-second decentralized web delivery with edge caching, WebAssembly optimizations, and 120 FPS guarantees.',
+    icon: <Zap size={32} color="#38bdf8" />,
+    tag: 'ULTRA LOW-LATENCY',
+    glowColor: '#38bdf8'
   }
 ];
 
@@ -30,13 +38,17 @@ const Services = () => {
   return (
     <section className="services-section" id="services">
       <div className="services-header">
+        <div className="services-badge-pill">
+          <Sparkles size={12} />
+          <span>CAPABILITIES & ARCHITECTURE</span>
+        </div>
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          What We <span className="text-gradient">Do</span>
+          Built for the <span className="text-gradient">Next Dimension</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -44,26 +56,33 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Delivering premium digital solutions for brands that refuse to blend in.
+          Delivering high-performance spatial digital experiences that captivate visitors and redefine creative boundaries.
         </motion.p>
       </div>
 
       <div className="services-grid">
         {servicesData.map((service, index) => (
           <motion.div 
-            className="service-card glass"
+            className="service-card"
             key={index}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -10 }}
           >
+            <div
+              className="service-card-glow"
+              style={{ background: service.glowColor }}
+            />
             <div className="icon-wrapper">
               {service.icon}
             </div>
             <h3>{service.title}</h3>
             <p>{service.description}</p>
+            <div className="service-pill-tag">
+              <span>{service.tag}</span>
+              <ArrowUpRight size={13} />
+            </div>
           </motion.div>
         ))}
       </div>

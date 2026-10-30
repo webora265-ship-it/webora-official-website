@@ -1,0 +1,643 @@
+/* ==========================================================================
+   WEBORA 3D SCROLL EXPERIENCE STYLES
+   Dark cosmic, space-universe theme (#0f0b1e, cyan, purple, neon pink)
+   ========================================================================== */
+
+.webora-scroll-wrapper {
+  position: relative;
+  width: 100%;
+  height: 380vh; /* 3-stage scroll track */
+  background: radial-gradient(circle at 50% 20%, #170d36 0%, #0f0b1e 45%, #07050d 100%);
+  color: #ffffff;
+}
+
+/* Sticky Canvas Viewport */
+.webora-sticky-viewport {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.webora-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Background Cosmic Nebula Gradients */
+.cosmic-nebula-glow {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+  transition: all 1s ease-out;
+}
+
+.nebula-purple {
+  top: 15%;
+  left: 10%;
+  background: radial-gradient(circle, #8a2be2 0%, rgba(138, 43, 226, 0) 70%);
+}
+
+.nebula-cyan {
+  bottom: 10%;
+  right: 15%;
+  background: radial-gradient(circle, #00f0ff 0%, rgba(0, 240, 255, 0) 70%);
+}
+
+.nebula-pink {
+  top: 50%;
+  left: 45%;
+  background: radial-gradient(circle, #ff007f 0%, rgba(255, 0, 127, 0) 70%);
+  opacity: 0.25;
+}
+
+/* UI Overlays Layer */
+.webora-ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 85px 4rem 2rem 4rem;
+  box-sizing: border-box;
+}
+
+/* Interactive elements inside overlay */
+.webora-ui-overlay button,
+.webora-ui-overlay a,
+.webora-ui-overlay .interactive {
+  pointer-events: auto;
+}
+
+/* Top Status HUD */
+.webora-top-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 30px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00f0ff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+.hud-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #00f0ff;
+  box-shadow: 0 0 8px #00f0ff;
+  animation: pulseGlow 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+.hud-telemetry {
+  display: flex;
+  gap: 20px;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.hud-telemetry span strong {
+  color: #ff007f;
+}
+
+/* Center Stage Dynamic Content */
+.webora-stage-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 580px;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.stage-1-pos {
+  left: 4.5rem;
+  text-align: left;
+}
+
+.stage-2-pos {
+  left: 4.5rem;
+  text-align: left;
+}
+
+.stage-3-pos {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 800px;
+}
+
+.stage-step-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff007f;
+  margin-bottom: 0.8rem;
+}
+
+.stage-step-tag .step-number {
+  background: linear-gradient(135deg, #ff007f, #8a2be2);
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+}
+
+.stage-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.stage-title .neon-text {
+  background: linear-gradient(135deg, #00f0ff 0%, #aa77ff 50%, #ff007f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.stage-desc {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.stage-3-pos .stage-desc {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stage-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stage-3-pos .stage-actions {
+  justify-content: center;
+}
+
+/* Neon Glow Buttons */
+.cosmic-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #00f0ff, #8a2be2);
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cosmic-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 35px rgba(138, 43, 226, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.cosmic-btn-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cosmic-btn-glass:hover {
+  background: rgba(0, 240, 255, 0.12);
+  border-color: #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Feature tags in Step 2 & 3 */
+.stage-features-pills {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  background: rgba(26, 16, 53, 0.6);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  border-radius: 20px;
+  color: #e2e8f0;
+  backdrop-filter: blur(8px);
+}
+
+.feature-pill svg {
+  color: #00f0ff;
+}
+
+/* Right Side Step Navigator HUD */
+.webora-step-nav {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.step-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.step-indicator-bar {
+  width: 4px;
+  height: 28px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+}
+
+.step-nav-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}
+
+.step-nav-label strong {
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.step-nav-item:hover .step-indicator-bar {
+  background: rgba(0, 240, 255, 0.6);
+  transform: scaleY(1.2);
+}
+
+.step-nav-item:hover .step-nav-label {
+  opacity: 1;
+}
+
+.step-nav-item.active .step-indicator-bar {
+  height: 48px;
+  background: linear-gradient(180deg, #00f0ff, #ff007f);
+  box-shadow: 0 0 12px #00f0ff;
+}
+
+.step-nav-item.active .step-nav-label {
+  opacity: 1;
+  color: #00f0ff;
+}
+
+/* Bottom HUD Bar */
+.webora-bottom-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.scroll-guide {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mouse-scroll-icon {
+  width: 20px;
+  height: 32px;
+  border: 2px solid rgba(0, 240, 255, 0.5);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.mouse-wheel-dot {
+  width: 4px;
+  height: 6px;
+  background-color: #00f0ff;
+  border-radius: 2px;
+  animation: scrollWheelAnim 1.6s infinite ease-in-out;
+}
+
+@keyframes scrollWheelAnim {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+
+.progress-track-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.progress-bar-bg {
+  width: 140px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00f0ff, #8a2be2, #ff007f);
+  box-shadow: 0 0 8px #00f0ff;
+  border-radius: 4px;
+  transition: width 0.1s linear;
+}
+
+/* Floating 3D HTML Orbiting Cards (Step 1) */
+.orbit-card {
+  padding: 12px 16px;
+  background: rgba(15, 11, 30, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 240, 255, 0.2);
+  width: 190px;
+  color: #ffffff;
+  pointer-events: none;
+  user-select: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.orbit-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.orbit-badge {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.badge-cyan {
+  background: rgba(0, 240, 255, 0.2);
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.4);
+}
+
+.badge-pink {
+  background: rgba(255, 0, 127, 0.2);
+  color: #ff007f;
+  border: 1px solid rgba(255, 0, 127, 0.4);
+}
+
+.badge-purple {
+  background: rgba(138, 43, 226, 0.2);
+  color: #aa77ff;
+  border: 1px solid rgba(138, 43, 226, 0.4);
+}
+
+.orbit-card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+
+.orbit-card-desc {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  line-height: 1.3;
+}
+
+.orbit-card-stats {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: #38bdf8;
+  font-family: monospace;
+}
+
+/* Step 2 Holographic Code & Modular Block Styles */
+.holo-code-block {
+  padding: 12px 14px;
+  background: rgba(10, 8, 22, 0.85);
+  border: 1px solid rgba(138, 43, 226, 0.5);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.35);
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.72rem;
+  color: #38bdf8;
+  pointer-events: none;
+  user-select: none;
+  width: 220px;
+  transform: translate(-50%, -50%);
+}
+
+.holo-code-block .code-kw {
+  color: #ff007f;
+}
+
+.holo-code-block .code-fn {
+  color: #00f0ff;
+}
+
+.holo-code-block .code-str {
+  color: #a7f3d0;
+}
+
+.module-3d-card {
+  padding: 14px 16px;
+  background: rgba(23, 13, 54, 0.82);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.25);
+  width: 200px;
+  color: #ffffff;
+  pointer-events: none;
+  user-select: none;
+  transform: translate(-50%, -50%);
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #00f0ff;
+}
+
+.module-header svg {
+  color: #ff007f;
+}
+
+.module-body {
+  font-size: 0.7rem;
+  color: #cbd5e1;
+}
+
+.module-status {
+  margin-top: 8px;
+  font-size: 0.65rem;
+  font-family: monospace;
+  color: #4ade80;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  box-shadow: 0 0 6px #4ade80;
+}
+
+/* Step 3 Portal Cards */
+.portal-hud-card {
+  padding: 10px 14px;
+  background: rgba(15, 11, 30, 0.88);
+  border: 1px solid rgba(255, 0, 127, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.35);
+  color: #ffffff;
+  width: 170px;
+  pointer-events: none;
+  user-select: none;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.portal-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #ff007f;
+  margin-bottom: 2px;
+}
+
+.portal-sub {
+  font-size: 0.65rem;
+  color: #00f0ff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .webora-ui-overlay {
+    padding: 70px 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .stage-1-pos, .stage-2-pos {
+    left: 1.5rem;
+    max-width: 90%;
+  }
+
+  .stage-title {
+    font-size: 2.3rem;
+  }
+
+  .stage-desc {
+    font-size: 0.95rem;
+  }
+
+  .webora-step-nav {
+    display: none;
+  }
+
+  .hud-telemetry {
+    display: none;
+  }
+}

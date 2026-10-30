@@ -1,0 +1,126 @@
+/* ==========================================================================
+   EXPLORE PAGE STYLES - WEBORA
+   ========================================================================== */
+
+.explore-page-wrapper {
+  padding: 120px 24px 140px;
+  max-width: 1360px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.explore-hero-box {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.explore-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #00f0ff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.explore-hero-box h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.explore-hero-box p {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Search & Filter Bar */
+.explore-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding: 16px 20px;
+  background: rgba(17, 13, 36, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+}
+
+.explore-search-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 16px;
+  min-width: 300px;
+  color: #ffffff;
+}
+
+.explore-search-input input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.explore-search-input input::placeholder {
+  color: #64748b;
+}
+
+.explore-tags-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.explore-tag-btn {
+  padding: 7px 16px;
+  border-radius: 20px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.explore-tag-btn:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.explore-tag-btn.active {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(138, 43, 226, 0.3));
+  border-color: #00f0ff;
+  color: #00f0ff;
+}
+
+@media (max-width: 768px) {
+  .explore-hero-box h1 {
+    font-size: 2.4rem;
+  }
+  .explore-search-input {
+    min-width: 100%;
+  }
+}
